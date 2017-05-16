@@ -7,7 +7,6 @@ public class Bala : MonoBehaviour {
 	public float fuerza;
 
 	void Start () {
-		
 		Rigidbody rb = GetComponent<Rigidbody> ();
 		rb.AddRelativeForce (Vector3.right * fuerza, ForceMode.Impulse);
 

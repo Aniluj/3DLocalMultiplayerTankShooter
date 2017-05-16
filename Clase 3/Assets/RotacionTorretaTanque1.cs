@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotacionTorretaTanque1 : MonoBehaviour {
 
+	private AudioSource SonidoDisparoTanque;
 	public GameObject prefab;
 	public Transform puntoDeSalida;
 	public float velocidadDeRotacion;
@@ -11,6 +12,7 @@ public class RotacionTorretaTanque1 : MonoBehaviour {
 	private float tiempoDeRecarga = 0.0f;
 
 	void Start () {
+		SonidoDisparoTanque = GetComponent<AudioSource> ();
 		condicionDeDisparoInicial = true;
 	}
 
@@ -26,12 +28,15 @@ public class RotacionTorretaTanque1 : MonoBehaviour {
 		{
 			transform.Rotate (-Vector3.up * velocidadDeRotacion * Time.deltaTime);
 		}
-		if (Input.GetKeyDown (KeyCode.Space) && condicionDeDisparoInicial == true)
+		if (Input.GetKeyDown (KeyCode.Space) && condicionDeDisparoInicial)
 		{
 				Instantiate (prefab, puntoDeSalida.position, puntoDeSalida.rotation);
+				SonidoDisparoTanque.Play ();
 				condicionDeDisparoInicial = false;
 		}
-		else if (Input.GetKeyDown (KeyCode.Space) && tiempoDeRecarga >= 1.5f) {
+		else if (Input.GetKeyDown (KeyCode.Space) && tiempoDeRecarga >= 1.5f) 
+		{
+				SonidoDisparoTanque.Play ();
 				Instantiate (prefab, puntoDeSalida.position, puntoDeSalida.rotation);
 				tiempoDeRecarga = 0;
 		}
