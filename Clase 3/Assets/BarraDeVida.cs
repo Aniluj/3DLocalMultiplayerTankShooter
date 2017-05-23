@@ -8,6 +8,7 @@ public class BarraDeVida : MonoBehaviour
 {
 	public Slider vida;
 	private Scene escena;
+	private float tiempoRegeneracionDeVidaSobreBotiquin = 0f;
 
 	void Start ()
 	{
@@ -23,6 +24,24 @@ public class BarraDeVida : MonoBehaviour
 			}
 		} else {
 			SceneManager.LoadScene(escena.name);
+		}
+	}
+
+	void OnTriggerStay(Collider col)
+	{
+		if (col.gameObject.tag == "Botiquin") {
+			tiempoRegeneracionDeVidaSobreBotiquin += Time.deltaTime;
+			if (tiempoRegeneracionDeVidaSobreBotiquin >= 2f) {
+				tiempoRegeneracionDeVidaSobreBotiquin = 0f;
+				vida.value += 1;
+			}
+		}
+	}
+
+	void OnTriggerExit (Collider col)
+	{
+		if (col.gameObject.tag == "Botiquin") {
+			tiempoRegeneracionDeVidaSobreBotiquin = 0f;
 		}
 	}
 }
