@@ -18,8 +18,10 @@ public class RotacionTorretaTanque2 : MonoBehaviour {
 
 	void Update () 
 	{
-		tiempoDeRecarga += Time.deltaTime;
-
+		if (!condicionDeDisparoInicial) 
+		{
+			tiempoDeRecarga += Time.deltaTime;
+		}
 		if (Input.GetKey (KeyCode.Keypad9)) 
 		{
 			transform.Rotate (Vector3.up * velocidadDeRotacion * Time.deltaTime);
@@ -28,17 +30,17 @@ public class RotacionTorretaTanque2 : MonoBehaviour {
 		{
 			transform.Rotate (-Vector3.up * velocidadDeRotacion * Time.deltaTime);
 		}
+		if (Input.GetKeyDown (KeyCode.KeypadEnter) && tiempoDeRecarga >= 1.5f) 
+		{
+			SonidoDisparoTanque.Play ();
+			Instantiate (prefab, puntoDeSalida.position, puntoDeSalida.rotation);
+			tiempoDeRecarga = 0;
+		}
 		if (Input.GetKeyDown (KeyCode.KeypadEnter) && condicionDeDisparoInicial)
 		{
 			Instantiate (prefab, puntoDeSalida.position, puntoDeSalida.rotation);
 			SonidoDisparoTanque.Play ();
 			condicionDeDisparoInicial = false;
-		}
-		else if (Input.GetKeyDown (KeyCode.KeypadEnter) && tiempoDeRecarga >= 1.5f) 
-		{
-			SonidoDisparoTanque.Play ();
-			Instantiate (prefab, puntoDeSalida.position, puntoDeSalida.rotation);
-			tiempoDeRecarga = 0;
 		}
 	}
 }

@@ -6,6 +6,7 @@ public class MovimientoDeTanque1 : MonoBehaviour
 {
 	public float velocidadDeMovimiento;
 	public float velocidadDeRotacion;
+	public float fuerzaHaciaAbajo;
 	private Rigidbody rigidBodyTanque1;
 
 	void Start () {
