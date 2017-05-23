@@ -37,8 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4884352590628268}
   - component: {fileID: 33832075200091194}
-  - component: {fileID: 64659247539158278}
   - component: {fileID: 23457090263531534}
+  - component: {fileID: 65848023179062756}
   m_Layer: 0
   m_Name: Regeneracion de vida
   m_TagString: Botiquin
@@ -111,8 +111,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1485763089209308}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &64659247539158278
-MeshCollider:
+--- !u!65 &65848023179062756
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -121,10 +121,8 @@ MeshCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  m_Size: {x: 1, y: 1.0000002, z: -0.33}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198937142167079590
 ParticleSystem:
   m_ObjectHideFlags: 1

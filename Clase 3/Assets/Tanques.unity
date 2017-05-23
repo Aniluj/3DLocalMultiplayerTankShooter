@@ -647,7 +647,13 @@ Prefab:
       propertyPath: m_TagString
       value: Botiquin
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 65848023179062756, guid: 9fd0835744cc6a14198d5706ac26bb2a,
+        type: 2}
+      propertyPath: m_Size.z
+      value: -0.33
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 9fd0835744cc6a14198d5706ac26bb2a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &251186999
@@ -1192,7 +1198,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadDeMovimiento: 1500
   velocidadDeRotacion: 5
-  fuerzaHaciaAbajo: 10000
+  rotacionDerecha: 100
+  rotacionIzquierda: 97
+  movimientoAdelante: 119
+  movimientoAtras: 115
 --- !u!4 &530833070
 Transform:
   m_ObjectHideFlags: 0
@@ -1221,8 +1230,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.51, y: 1.1542103, z: 1.88}
-  m_Center: {x: -0.92, y: 1.4079498, z: -0.16371298}
+  m_Size: {x: 1.510015, y: 1.1426764, z: 1.8800128}
+  m_Center: {x: -0.91920674, y: 1.2785044, z: -0.16333002}
 --- !u!54 &530833072
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1236,7 +1245,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &530833073
 MonoBehaviour:
@@ -3076,8 +3085,8 @@ GameObject:
   - component: {fileID: 1640515338}
   - component: {fileID: 1640515336}
   - component: {fileID: 1640515339}
-  - component: {fileID: 1640515337}
   - component: {fileID: 1640515340}
+  - component: {fileID: 1640515337}
   m_Layer: 0
   m_Name: Tanque2
   m_TagString: Untagged
@@ -3095,8 +3104,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.51, y: 1.1542103, z: 1.88}
-  m_Center: {x: -0.94, y: 1.4079498, z: -0.29}
+  m_Size: {x: 1.510015, y: 1.2037966, z: 1.880013}
+  m_Center: {x: -0.940001, y: 1.2840062, z: -0.2899965}
 --- !u!114 &1640515337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3105,11 +3114,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1640515335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c12531fb0aea23b4cb35723c63f7b59f, type: 3}
+  m_Script: {fileID: 11500000, guid: db811117a6092914ab6e109764dd7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadDeMovimiento: 1500
   velocidadDeRotacion: 5
+  rotacionDerecha: 262
+  rotacionIzquierda: 260
+  movimientoAdelante: 264
+  movimientoAtras: 261
 --- !u!4 &1640515338
 Transform:
   m_ObjectHideFlags: 0
@@ -3141,7 +3154,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &1640515340
 MonoBehaviour:
@@ -3359,6 +3372,7 @@ GameObject:
   - component: {fileID: 1898415620}
   - component: {fileID: 1898415623}
   - component: {fileID: 1898415621}
+  - component: {fileID: 1898415624}
   m_Layer: 0
   m_Name: ParteSuperior
   m_TagString: Untagged
@@ -3509,9 +3523,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2d947b4652c6c43a13d05a70cff898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1394516906481426, guid: 30935bb8e22b84647b8d02ebf4590a05, type: 2}
-  puntoDeSalida: {fileID: 854777181}
   velocidadDeRotacion: 100
+  giroDerecha: 101
+  giroIzquierda: 113
+--- !u!114 &1898415624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1898415618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cf4b91cdbc2be45b590cf2e1cda2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1394516906481426, guid: 30935bb8e22b84647b8d02ebf4590a05, type: 2}
+  disparo: 32
+  puntoDeSalida: {fileID: 854777181}
 --- !u!1001 &1955970339
 Prefab:
   m_ObjectHideFlags: 0
@@ -3833,8 +3861,9 @@ GameObject:
   - component: {fileID: 2074903617}
   - component: {fileID: 2074903620}
   - component: {fileID: 2074903619}
-  - component: {fileID: 2074903618}
   - component: {fileID: 2074903621}
+  - component: {fileID: 2074903622}
+  - component: {fileID: 2074903618}
   m_Layer: 0
   m_Name: ParteSuperior
   m_TagString: Untagged
@@ -3864,12 +3893,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2074903616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e098c3ab9c9bc6b4e92c6b73ece26c25, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f2d947b4652c6c43a13d05a70cff898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1394516906481426, guid: 30935bb8e22b84647b8d02ebf4590a05, type: 2}
-  puntoDeSalida: {fileID: 155555900}
   velocidadDeRotacion: 100
+  giroDerecha: 265
+  giroIzquierda: 263
 --- !u!23 &2074903619
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3988,3 +4017,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &2074903622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2074903616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cf4b91cdbc2be45b590cf2e1cda2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1394516906481426, guid: 30935bb8e22b84647b8d02ebf4590a05, type: 2}
+  disparo: 271
+  puntoDeSalida: {fileID: 155555900}
