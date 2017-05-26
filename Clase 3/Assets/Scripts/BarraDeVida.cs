@@ -22,8 +22,6 @@ public class BarraDeVida : MonoBehaviour
 			if (col.transform.tag == "Bala") {
 				vida.value--;
 			}
-		} else {
-			SceneManager.LoadScene(escena.name);
 		}
 	}
 
