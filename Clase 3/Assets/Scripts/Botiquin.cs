@@ -22,8 +22,14 @@ public class Botiquin : MonoBehaviour {
                 vida.RegenerarVida(5);
             }
             activo = false;
+
+            this.gameObject.GetComponent<MeshRenderer>().material.color = new Color(
+                                                                                    this.gameObject.GetComponent<MeshRenderer>().material.color.r,
+                                                                                    this.gameObject.GetComponent<MeshRenderer>().material.color.g,
+                                                                                    this.gameObject.GetComponent<MeshRenderer>().material.color.b,
+                                                                                    0.0f);
+            this.gameObject.GetComponentInChildren<ParticleSystem>().Stop();
         }
     }
-
 
 }

@@ -964,6 +964,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaActual: 10
   vida: {fileID: 114146081267117710}
+  lugaresDeSpawn:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114579620351262620
 MonoBehaviour:
   m_ObjectHideFlags: 1

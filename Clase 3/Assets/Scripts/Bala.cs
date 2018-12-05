@@ -18,6 +18,10 @@ public class Bala : MonoBehaviour {
         if(vida != null)
         {
             vida.HacerDanio(1);
+            if(vida.vidaActual <= 0)
+            {
+                vida.RegenerarVida(10);
+            }
         }
 		Destroy (this.gameObject);
 	}

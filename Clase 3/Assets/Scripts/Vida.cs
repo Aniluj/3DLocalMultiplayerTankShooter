@@ -15,13 +15,20 @@ public class Vida : NetworkBehaviour
     public Slider vida;
 	private Scene escena;
 
-	//private float tiempoRegeneracionDeVidaSobreBotiquin = 0f;
+    public NetworkStartPosition[] lugaresDeSpawn;
 
-	/*void Start ()
+    //private float tiempoRegeneracionDeVidaSobreBotiquin = 0f;
+
+    /*void Start ()
 	{
 		vida.value = 10;
 		escena = SceneManager.GetActiveScene ();
 	}*/
+
+    private void Start()
+    {
+        lugaresDeSpawn = FindObjectsOfType<NetworkStartPosition>();
+    }
 
     public void HacerDanio(int danioInfligido) {
         if(!isServer)
@@ -63,7 +70,7 @@ public class Vida : NetworkBehaviour
     void RpcRespawn() {
         if(isLocalPlayer)
         {
-            transform.position = Vector3.zero;
+            transform.position = lugaresDeSpawn[Random.Range(0, lugaresDeSpawn.Length)].transform.position;
         }
     }
 
