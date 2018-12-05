@@ -14,6 +14,11 @@ public class Bala : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col)
 	{
-		Destroy (gameObject);
+        Vida vida = col.gameObject.GetComponent<Vida>();
+        if(vida != null)
+        {
+            vida.HacerDanio(1);
+        }
+		Destroy (this.gameObject);
 	}
 }

@@ -13,13 +13,10 @@ public class RotacionTorretaTanque : NetworkBehaviour {
     private Transform turretTransform;
 
 	void Start () {
-
         if(isLocalPlayer)
         {
             turretTransform = turret.GetComponent<Transform>();
-            Debug.Log("dsassff");
         }
-
     }
 
 	void Update () 

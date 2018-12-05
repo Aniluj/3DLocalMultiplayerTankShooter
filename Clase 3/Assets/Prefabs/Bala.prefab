@@ -24,8 +24,7 @@ GameObject:
   - component: {fileID: 23818578679787856}
   - component: {fileID: 54816051556913324}
   - component: {fileID: 114337929033770666}
-  - component: {fileID: 114355198068382226}
-  - component: {fileID: 114517054381105542}
+  - component: {fileID: 114191257522593642}
   m_Layer: 0
   m_Name: Bala
   m_TagString: Bala
@@ -103,19 +102,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114337929033770666
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1394516906481426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c08e334201724c74ea7eec7b327a25b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuerza: 75
---- !u!114 &114355198068382226
+--- !u!114 &114191257522593642
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +134,7 @@ MonoBehaviour:
     i15: 5
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &114517054381105542
+--- !u!114 &114337929033770666
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,19 +142,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1394516906481426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: c08e334201724c74ea7eec7b327a25b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
+  fuerza: 75
 --- !u!135 &135487629639917186
 SphereCollider:
   m_ObjectHideFlags: 1

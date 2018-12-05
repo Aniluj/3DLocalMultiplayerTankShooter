@@ -962,6 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea2b72c681d7f340938bd67ce62cffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidaActual: 10
   vida: {fileID: 114146081267117710}
 --- !u!114 &114579620351262620
 MonoBehaviour:
