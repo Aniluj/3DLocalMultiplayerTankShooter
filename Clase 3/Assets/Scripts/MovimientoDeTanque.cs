@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 using UnityEngine;
 
-public class MovimientoDeTanque : MonoBehaviour 
+public class MovimientoDeTanque : NetworkBehaviour 
 {
 	public float velocidadDeMovimiento;
 	public float velocidadDeRotacion;
@@ -13,12 +14,24 @@ public class MovimientoDeTanque : MonoBehaviour
 	private Rigidbody rigidBodyTanque;
 
 	void Start () {
-		rigidBodyTanque = GetComponent<Rigidbody> ();
-	}
+        if(!isLocalPlayer)
+        {
+            GetComponentInChildren<Camera>().enabled = false;
+        }
+        else
+        {
+            rigidBodyTanque = GetComponent<Rigidbody>();
+        }
+    }
 
 	void Update () 
 	{
-		if (Input.GetKey (movimientoAdelante)) 
+        if(!isLocalPlayer)
+        {
+            return;
+        }
+
+        if (Input.GetKey (movimientoAdelante)) 
 		{
 			rigidBodyTanque.AddRelativeForce (Vector3.right * velocidadDeMovimiento, ForceMode.Force);
 		}	

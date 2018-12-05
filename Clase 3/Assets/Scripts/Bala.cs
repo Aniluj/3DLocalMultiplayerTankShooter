@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 using UnityEngine;
 
-public class Bala : MonoBehaviour {
+public class Bala : NetworkBehaviour {
 
 	public float fuerza;
 

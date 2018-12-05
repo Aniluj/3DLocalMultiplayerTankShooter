@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
-public class Respawn : MonoBehaviour {
+public class Respawn : NetworkBehaviour {
 
 	public Slider barraVida;
 	public Slider vidaEnemigo;

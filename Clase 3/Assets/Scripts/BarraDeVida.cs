@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
-public class BarraDeVida : MonoBehaviour
+public class BarraDeVida : NetworkBehaviour
 {
 	public Slider vida;
 	private Scene escena;
