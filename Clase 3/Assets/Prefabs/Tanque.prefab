@@ -293,10 +293,11 @@ GameObject:
   - component: {fileID: 114819391886930078}
   - component: {fileID: 114535759003252288}
   - component: {fileID: 114915791772119572}
-  - component: {fileID: 114195295452177118}
-  - component: {fileID: 114921029205086036}
   - component: {fileID: 114730510618289914}
+  - component: {fileID: 114921029205086036}
+  - component: {fileID: 114944780251090566}
   - component: {fileID: 114454618563752492}
+  - component: {fileID: 114859995991354802}
   m_Layer: 0
   m_Name: Tanque
   m_TagString: Untagged
@@ -850,27 +851,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114195295452177118
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1892918969151568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114250300839058642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1118,6 +1098,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114859995991354802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1892918969151568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cf4b91cdbc2be45b590cf2e1cda2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SonidoDisparoTanque: {fileID: 82208424119141314}
+  prefab: {fileID: 1394516906481426, guid: 30935bb8e22b84647b8d02ebf4590a05, type: 2}
+  disparo: 32
+  puntoDeSalida: {fileID: 4431661614541940}
 --- !u!114 &114915791772119572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1170,6 +1165,27 @@ MonoBehaviour:
     i15: 55
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114944780251090566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1892918969151568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!124 &124109192725573876
 Behaviour:
   m_ObjectHideFlags: 1
