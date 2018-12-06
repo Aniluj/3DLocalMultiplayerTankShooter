@@ -7,8 +7,8 @@ public class Disparo : NetworkBehaviour {
 
     public AudioSource SonidoDisparoTanque;
     private bool condicionDeDisparoInicial;
-   // [SyncVar(hook = "RpcUpdateTimer")]
-   // private float tiempoDeRecarga = 0f;
+
+    private float tiempoDeRecarga = 0f;
 
     public GameObject prefab;
     public KeyCode disparo;
@@ -32,34 +32,25 @@ public class Disparo : NetworkBehaviour {
         }
         else
         {
-            /*if(Input.GetKeyDown(disparo) && tiempoDeRecarga >= 0.75f)
+            
+            if (!condicionDeDisparoInicial)
+            {
+                tiempoDeRecarga += Time.deltaTime;
+            }
+
+            if (Input.GetKeyDown(disparo) && tiempoDeRecarga >= 0.75f)
             {
                 CmdFire();
-            }*/
+                tiempoDeRecarga = 0.0f;
+            }
             if(Input.GetKeyDown(disparo) && condicionDeDisparoInicial)
             {
+                condicionDeDisparoInicial = false;
+                tiempoDeRecarga = 0.0f;
                 CmdFire();
             }
         }
     }
-
-    /*[ClientRpc]
-    private void RpcUpdateTimer(float tiempoRecibido)
-    {
-        if(!isServer)
-        {
-            return;
-        }
-        
-        if(condicionDeDisparoInicial)
-        {
-            condicionDeDisparoInicial = false;
-        }
-        else
-        {
-            tiempoDeRecarga = Time.deltaTime;
-        }
-    }*/
 
     [Command]
     private void CmdFire()

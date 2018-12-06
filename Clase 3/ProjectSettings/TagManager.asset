@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bala
   - Botiquin
+  - DeathBallLimit
   layers:
   - Default
   - TransparentFX
